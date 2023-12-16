@@ -1,19 +1,29 @@
 import { useState } from 'react';
-import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Alert, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import Person from '../assets/person.png';
 
 const Login = ({ toggleScreens }) => {
 
-    const [data, setData] = useState({
+    const initialValues = {
         email: '',
         password: ''
-    })
+    }
+
+    const [data, setData] = useState(initialValues)
 
     const handleSubmit = () => {
         console.log(data);
 
-        // API Call for login
+        Alert.alert(
+            'Submitted!',
+            'Form Submitted Successfully!',
+            [ { text: 'Close' } ],
+            { cancelable: false }
+        );
+
+        setData(initialValues);
+
     }
 
     return (

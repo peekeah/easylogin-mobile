@@ -1,15 +1,17 @@
 import { useState } from 'react';
-import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Alert, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 const SignUp = ({ toggleScreens }) => {
 
-    const [data, setData] = useState({
+    const initialValues = {
         name: '',
         email: '',
         phone: '',
         password: '',
         confirmPassword: ''
-    })
+    }
+
+    const [data, setData] = useState(initialValues);
 
     const handleChange = (newValue, field) => {
         setData(prev => ({ ...prev, [field]: newValue }));
@@ -18,7 +20,14 @@ const SignUp = ({ toggleScreens }) => {
     const handleSubmit = () => {
         console.log(data);
 
-        // API Call for login
+        Alert.alert(
+            'Submitted!',
+            'Form Submitted Successfully!',
+            [ { text: 'Close' } ],
+            { cancelable: false }
+        );
+
+        setData(initialValues);
     }
 
     return (
