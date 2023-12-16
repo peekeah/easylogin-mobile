@@ -23,7 +23,7 @@ const Login = () => {
                 </View>
                 <TouchableOpacity onPress={() => {/* do this */}}>
                     <View className="p-3 rounded-2xl bg-green justify-center">
-                        <Text className="text-white text-lg text-center">Button</Text>
+                        <Text className="text-white text-lg text-center">Log In</Text>
                     </View>
                 </TouchableOpacity>
             </View>
