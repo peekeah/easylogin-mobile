@@ -7,7 +7,7 @@ import SignUp from './components/Signup';
 
 export default function App() {
 
-  const [displayLoginPage, setDisplayLoginPage] = useState(false);
+  const [displayLoginPage, setDisplayLoginPage] = useState(true);
 
   const toggleScreens = () => setDisplayLoginPage(prev => !prev);
 
