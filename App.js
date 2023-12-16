@@ -1,12 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Login from './components/Login';
 import { useState } from 'react';
+import SignUp from './components/Signup';
 
 export default function App() {
 
-  const [displayLoginPage, setDisplayLoginPage] = useState(true);
+  const [displayLoginPage, setDisplayLoginPage] = useState(false);
 
   const toggleScreens = () => setDisplayLoginPage(prev => !prev);
 
@@ -15,7 +16,7 @@ export default function App() {
     {
       displayLoginPage ? 
         <Login toggleScreens={toggleScreens} /> : 
-        <Text>Signup Page</Text>
+        <SignUp toggleScreens={toggleScreens} />
     }
       
       <StatusBar style="auto" />

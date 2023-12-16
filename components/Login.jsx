@@ -19,6 +19,7 @@ const Login = ({ toggleScreens }) => {
                 <TextInput
                     className="border border-black p-3 rounded-2xl"
                     placeholder="Your Password"
+                    secureTextEntry={true}
                 />
             </View>
             <TouchableOpacity onPress={() => {/* do this */ }}>
@@ -29,7 +30,7 @@ const Login = ({ toggleScreens }) => {
             <View className='flex flex-row justify-center'>
                 <Text>Don't have an account? </Text>
                 <TouchableOpacity onPress={toggleScreens}>
-                    <Text className="text-green p-0 m-0">Log In</Text>
+                    <Text className="text-green p-0 m-0">Sign Up</Text>
                 </TouchableOpacity>
             </View>
         </View>
