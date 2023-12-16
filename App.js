@@ -1,12 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import Login from './components/Login';
+import { useState } from 'react';
 
 export default function App() {
+
+  const [displayLoginPage, setDisplayLoginPage] = useState(true);
+
+  const toggleScreens = () => setDisplayLoginPage(prev => !prev);
+
   return (
     <View style={styles.container}>
-      <Login />
+    {
+      displayLoginPage ? 
+        <Login toggleScreens={toggleScreens} /> : 
+        <Text>Signup Page</Text>
+    }
+      
       <StatusBar style="auto" />
     </View>
   );
@@ -14,10 +25,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
     marginTop: '100px'
   },
 });
